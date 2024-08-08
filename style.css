@@ -1,68 +1,107 @@
-*{
-    margin : 0;
-    padding : 0;
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
+/* Style for the header */
 h1 {
     background-color: #081b31;
-    color : #fff;
-    height : 5rem;
-    line-height : 5rem;
+    color: #fff;
+    height: 10vh; /* 10% of the viewport height */
+    line-height: 10vh; /* Center text vertically */
+    font-size: 2rem; /* Relative font size */
 }
 
+/* Style for the choice containers */
 .choice {
-    height : 165px;
-    width : 165px;
+    height: 15vh; /* 15% of the viewport height */
+    width: 15vh; /* Make it square with a width equal to the height */
     border-radius: 50%;
-    display : flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
+/* Style for the images within the choice containers */
 img {
-    height : 150px;
-    width : 150px;
+    height: 90%; /* 90% of the choice container height */
+    width: 90%; /* 90% of the choice container width */
     object-fit: cover;
-    border-radius: 45%;
+    border-radius: 45%; /* Rounded corners */
 }
 
+/* Flex container for the choices */
 .choices {
-    display : flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap : 3rem;
-    margin-top: 5rem;
+    gap: 2rem;
+    margin-top: 5vh; /* 5% of the viewport height */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
+/* Hover effect for the choices */
 .choice:hover {
-cursor: pointer;
-background-color: #081b31;
+    cursor: pointer;
+    background-color: #081b31;
 }
 
+/* Flex container for the score board */
 .score-board {
-    display : flex;
-    justify-content : center;
-    align-items : center;
-    font-size : 2rem;
-    margin-top: 3rem;
-    gap : 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem; /* Adjusted font size */
+    margin-top: 5vh; /* 5% of the viewport height */
+    gap: 3rem; /* Reduced gap for smaller screens */
 }
 
+/* Individual score styles */
 #user-score, #comp-score {
-  font-size : 4rem;
+    font-size: 3rem; /* Adjusted for better responsiveness */
 }
 
+/* Message container */
 .msg-container {
-    margin-top: 5rem;
+    margin-top: 5vh; /* 5% of the viewport height */
 }
 
+/* Message style */
 #msg {
     background-color: #081b31;
-    color : #fff;
-    font-size : 2rem;
-    margin-top : 5rem;
-    display : inline;
-    padding : 1rem;
+    color: #fff;
+    font-size: 1.5rem; /* Adjusted font size */
+    margin-top: 5vh; /* 5% of the viewport height */
+    display: inline-block;
+    padding: 1rem;
     border-radius: 1rem;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .choice {
+        height: 12vh;
+        width: 12vh;
+    }
+
+    img {
+        height: 80%;
+        width: 80%;
+    }
+
+    .score-board {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    #user-score, #comp-score {
+        font-size: 2.5rem;
+    }
+
+    #msg {
+        font-size: 1.2rem;
+    }
 }
